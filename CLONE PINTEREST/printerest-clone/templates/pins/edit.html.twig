@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Edit pin #' ~ pin.id %}
+
+{% block body%}
+
+    {# <div class="d-flex "> #}
+        <div class="container d-flex justify-content-center flex-column align-items-center">
+            <h1>Edit Pin #{{ pin.id }}</h1>
+            {{ form_start(form) }}
+                {{ form_widget(form, {'attr' : {'class' : 'form-control'} }) }}
+                <input type="submit" class="btn btn-secondary mt-3 mx-auto" value="Update Pin">
+            {{ form_start(form) }}
+        </div>
+    {# </div> #}
+{% endblock %}

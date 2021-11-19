@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+            <link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.min.css">
+            <link rel="stylesheet" href="../assets/css/style.css">
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+             {# <script src="../src/assets/js/app.js"></script> #}
+        {% endblock %}
+    </head>
+    <body>
+        <!-- {# <div class="d-flex"> #} -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h1 class="mr-auto p-2"><a href="{{ path('app_home') }}" class="text-decoration-none">Pinterest</a></h1>
+                <div class="collapse navbar-collapse">
+                    <a class="nav-link link-muted" href="{{ path('app_home') }}">Home</a>
+                    <a class="nav-link link-muted" href="{{ path('app_pins_create') }}">New Pin</a>
+                    <ul class="navbar-nav me-auto"></ul>
+                       <div>
+                            <button class="btn btn-danger">Connexion</button>
+                            <button class="btn btn-danger">Inscription</button>
+                        </div> 
+                    
+                </div>
+            </div>
+            </nav>
+        <!-- {# </div> #} -->
+        {% block body %}{% endblock %}
+    </body>
+</html>

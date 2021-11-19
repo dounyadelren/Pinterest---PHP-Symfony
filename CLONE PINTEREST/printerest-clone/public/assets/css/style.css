@@ -1,0 +1,25 @@
+.pin img:hover{
+    transition : transform 0.3s; 
+    transform: scale(1.075);
+}
+.tableau {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+/* 
+.icon {
+    display:flex;
+} */
+ul, li {
+    list-style-type: none;
+}
