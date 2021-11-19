@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Pin;
+use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use App\Repository\PinRepository;
@@ -69,17 +70,24 @@ class PinsController extends AbstractController
                 ])
             // ->add('submit', SubmitType::class, ['label' => 'Create Pin'])
             ->getForm()
-        ;
+            
+            ;
+        $user= $this->getUser();
+        $pin->setUser($user);
+        // dd($form);
+        // dd($id);
+        // dd($request);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
+            // $em->persist($id);
             $em->persist($pin);
             $em->flush();
 
             return $this->redirectToRoute('app_pins_show', ['id' => $pin->getId()]);
 
-        } else {
-            echo 'erreur';
+        // } else {
+        //     echo 'erreur';
         }
 
         return $this->render('pins/new.html.twig', [
