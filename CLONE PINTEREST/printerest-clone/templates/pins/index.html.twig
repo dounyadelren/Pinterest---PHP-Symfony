@@ -21,7 +21,7 @@
                         {# <p>{{ pin.description }}</p> #}
                         <p class="pl-3 pb-3 text-muted">
                             <small> Submitted 
-                                <time dateTime="{{ pin.createdAt|date('Y-m-d- H:i:s') }}">{{ pin.createdAt|ago }}</time> by [OWNER FULL NAME]
+                                <time dateTime="{{ pin.createdAt|date('Y-m-d- H:i:s') }}">{{ pin.createdAt|ago }}</time> by {{ pin.user.firstName}} {{ pin.user.lastName }}
                             </small>
                         </p>
                     </article>

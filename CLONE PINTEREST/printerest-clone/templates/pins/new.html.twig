@@ -6,7 +6,7 @@
 
     <div class="formulaire">
         <h1>Create Pin</h1>
-        {# <form action="" method="POST">
+        <!-- {# <form action="" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token('pins_create') }}"><br>
             <div>
                 <label for="title">Title</label><br>
@@ -17,7 +17,7 @@
                 <textarea id="description" cols="60" rows="5" name="description" required ></textarea><br>
             </div>
             <input type="submit" value="Create Pin">
-        </form> #}
+        </form> #} -->
         {{ form_start(monFormulaire) }}
             {{ form_widget(monFormulaire, {'attr' : {'class' : 'form-control'} }) }}
             <input type="submit" class="btn btn-secondary" value="Create Pin">
