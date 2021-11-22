@@ -17,13 +17,15 @@
                                 <img src="{{ vich_uploader_asset(pin) | imagine_filter('squared_thumbnail_medium') }}"  alt="{{ pin.title }}" class="w-100">
                             </a>
                         </div>
-                        <h2 class="h5 pl-3 pt-3" ><a class="text-secondary text-decoration-none" href="{{ path('app_pins_show', {'id': pin.id}) }}">{{ pin.title }}</a></h2>
-                        {# <p>{{ pin.description }}</p> #}
-                        <p class="pl-3 pb-3 text-muted">
-                            <small> Submitted 
-                                <time dateTime="{{ pin.createdAt|date('Y-m-d- H:i:s') }}">{{ pin.createdAt|ago }}</time> by {{ pin.user.firstName}} {{ pin.user.lastName }}
-                            </small>
-                        </p>
+                        <div class="m-2">
+                            <h2 class="h5 pl-3 pt-3" ><a class="text-secondary text-decoration-none" href="{{ path('app_pins_show', {'id': pin.id}) }}">{{ pin.title }}</a></h2>
+                            {# <p>{{ pin.description }}</p> #}
+                            <p class="pl-3 pb-3 text-muted">
+                                <small> Submitted 
+                                    <time dateTime="{{ pin.createdAt|date('Y-m-d- H:i:s') }}">{{ pin.createdAt|ago }}</time> by {{ pin.user.firstName}} {{ pin.user.lastName }}
+                                </small>
+                            </p>
+                        </div>
                     </article>
                 </div>
             {% else %}

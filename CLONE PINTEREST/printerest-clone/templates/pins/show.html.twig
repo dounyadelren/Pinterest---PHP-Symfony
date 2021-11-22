@@ -5,7 +5,6 @@
 {% block body %}
     <div class="tableau mt-5 mb-5">
         <div class="col-md-4 mx-auto">
-            {# <div  class="pin col-md-4"> #}
                 <article class="bg-white rounded shadow pt-5">
                     <div class="mw-100 d-flex  rounded-top flex-column align-items-center flex-wrap align-content-space">
                         <img class="icon" src="{{ vich_uploader_asset(pin) | imagine_filter('squared_thumbnail_medium') }}"  alt="{{ pin.title }}">
@@ -15,15 +14,19 @@
                                 <time dateTime="{{ pin.createdAt|date('Y-m-d- H:i:s') }}">{{ pin.createdAt|ago }}</time> by {{ pin.user.firstName}} {{ pin.user.lastName }}
                             </small>
                         </p>
-                        <p class="pl-2 pb-2">{{ pin.description }}</p>
+                        <div class="p-2">
+                            <p class="pl-2 pb-2 pr-2 text-break">{{ pin.description }}</p>
+                        </div>
 
                     </div>
-            {# </div> #}
+                    {% if app.user%}
                     <div class="d-flex justify-content-around pb-3">
                         <a href="{{ path('app_home') }}"><button class="btn btn-light">Back</button></a>
                         <a href="{{ path('app_pins_edit', {id: pin.id}) }}"><button class="btn btn-light">Edit</button></a>
                         <a href="{{ path('app_pins_delete', {id: pin.id}) }}" onClick="confirm('Are you sure?') && alert('Pin deleted')"><button class="btn btn-light">Delete</button></a>
                     </div>
+                    {% endif %}
+
                 </article>
         </div>
     </div>

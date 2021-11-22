@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Board{% endblock %}
+
+{% block body %}
+
+<div class="tableau row mb-5 mt-5">
+    {% for pin in app.user.pins %}
+    <div  class="pin col-md-4">
+        <article class="bg-white rounded shadow">
+            <div class="mw-100  rounded-top overflow-hidden">
+                <a href="{{ path('app_pins_show', {'id': pin.id}) }}">
+                    <img src="{{ vich_uploader_asset(pin) | imagine_filter('squared_thumbnail_medium') }}"  alt="{{ pin.title }}" class="w-100">
+                </a>
+            </div>
+            <div class="m-2">
+                <h2 class="h5 pl-3 pt-3" ><a class="text-secondary text-decoration-none" href="{{ path('app_pins_show', {'id': pin.id}) }}">{{ pin.title }}</a></h2>
+                {# <p>{{ pin.description }}</p> #}
+                <p class="pl-3 pb-3 text-muted">
+                    <small> Submitted 
+                        <time dateTime="{{ pin.createdAt|date('Y-m-d- H:i:s') }}">{{ pin.createdAt|ago }}</time> by you
+                    </small>
+                </p>
+            </div>
+        </article>
+    </div>
+{% else %}
+    <p class="h1 mt-5 text-center">Sorry, you haven't post any pins yet. <a href="{{ path('app_pins_create') }}">Come on!</a></p>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

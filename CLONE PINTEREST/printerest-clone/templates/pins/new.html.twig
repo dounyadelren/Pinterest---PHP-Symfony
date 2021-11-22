@@ -4,24 +4,19 @@
 
 {% block body%}
 
-    <div class="formulaire">
-        <h1>Create Pin</h1>
-        <!-- {# <form action="" method="POST">
-            <input type="hidden" name="_token" value="{{ csrf_token('pins_create') }}"><br>
-            <div>
-                <label for="title">Title</label><br>
-                <input type="text" id="title" name="title" required ><br>
+    {% if app.user %}
+        <div class="formulaire">
+            <div class="">
+                <h1>Create Pin</h1>
+                {{ form_start(monFormulaire) }}
+                    {{ form_widget(monFormulaire, {'attr' : {'class' : 'form-control'} }) }}
+                    <input type="submit" class="btn btn-secondary" value="Create Pin">
+                {{ form_start(monFormulaire) }}
             </div>
-            <div>
-                <label for="description">Description</label><br>
-                <textarea id="description" cols="60" rows="5" name="description" required ></textarea><br>
+    {% else %}
+        <p class="text-center h5 mt-3   p-3">Please <a href="/login">authenticate yourself</a> or <a href="/register">create an account</a> to post!</p>
+    {% endif %}
+
             </div>
-            <input type="submit" value="Create Pin">
-        </form> #} -->
-        {{ form_start(monFormulaire) }}
-            {{ form_widget(monFormulaire, {'attr' : {'class' : 'form-control'} }) }}
-            <input type="submit" class="btn btn-secondary" value="Create Pin">
-        {{ form_start(monFormulaire) }}
-    </div>
 {% endblock %}
 

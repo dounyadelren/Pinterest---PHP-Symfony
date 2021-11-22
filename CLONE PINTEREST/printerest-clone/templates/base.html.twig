@@ -25,13 +25,20 @@
                 <h1 class="mr-auto p-2"><a href="{{ path('app_home') }}" class="text-decoration-none">Pinterest</a></h1>
                 <div class="collapse navbar-collapse">
                     <a class="nav-link link-muted" href="{{ path('app_home') }}">Home</a>
+                    {% if app.user %}
                     <a class="nav-link link-muted" href="{{ path('app_pins_create') }}">New Pin</a>
+                    <a class="nav-link link-muted" href="/board">Board</a>
                     <ul class="navbar-nav me-auto"></ul>
                        <div>
+                           <a href="/user" class="m-2 link-secondary">{{ app.user.email }}</a>
+                           <a href="/logout"><button class="btn btn-danger">Deconnexion</button></a>
+                        </div>
+                    {% else %}
+                        <div>
                             <a href="/login"><button class="btn btn-danger">Connexion</button></a>
                             <a href="/register"><button class="btn btn-danger">Inscription</button></a>
-                            <a href="/logout"><button class="btn btn-danger">Deconnexion</button></a>
                         </div> 
+                    {% endif %}
                     
                 </div>
             </div>
