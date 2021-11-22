@@ -37,6 +37,7 @@ Cette mini réplique de Pinterest a presque entièrement été réalisée avec l
 <h2>A venir</h2>
 - une page pour modifier le profil + ajout d'une photo de profil <br>
 - le rôle administrateur ainsi que son interface <br>
+- Responsivité <br>
 
 
 
