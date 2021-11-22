@@ -15,11 +15,11 @@
                             </small>
                         </p>
                         <div class="p-2">
-                            <p class="pl-2 pb-2 pr-2 text-break">{{ pin.description }}</p>
+                            <p class="pl-2 pr-2 text-break">{{ pin.description }}</p>
                         </div>
 
                     </div>
-                    {% if app.user%}
+                    {% if pin.user.id == app.user.id %}
                     <div class="d-flex justify-content-around pb-3">
                         <a href="{{ path('app_home') }}"><button class="btn btn-light">Back</button></a>
                         <a href="{{ path('app_pins_edit', {id: pin.id}) }}"><button class="btn btn-light">Edit</button></a>
