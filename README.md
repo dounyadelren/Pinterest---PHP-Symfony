@@ -8,6 +8,7 @@ Recréer Pinterest avec le framework php Symfony et MYSQL
 <h2>prérequis </h2>
 ~ avoir Symfony installé et mis à jour sur votre ordinateur ~<br>
 SINON -> aller voir la documentation sur l'installation de Symfony <a href="https://symfony.com/doc/current/setup.html">ici</a><br>
+NB //!!!\\ --> vous pouvez retrouver une vidéo démo de ce projet sur mon <a href="https://dounyadelren.github.io/Portfolio_DounyaDerlen/">portfolio</a> 
 
 <h2>commandes</h2>
 
