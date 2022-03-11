@@ -9,9 +9,15 @@
     <div  class="pin col-md-4">
         <article class="bg-white rounded shadow">
             <div class="mw-100  rounded-top overflow-hidden">
-                <a href="{{ path('app_pins_show', {'id': pin.id}) }}">
-                    <img src="{{ vich_uploader_asset(pin) | imagine_filter('squared_thumbnail_medium') }}"  alt="{{ pin.title }}" class="w-100">
-                </a>
+                {% if vich_uploader_asset(pin) is null %}
+                    <a href="{{ path('app_pins_show', {'id': pin.id}) }}">
+                        <img src="{{ vich_uploader_asset(pin) }}"  alt="{{ pin.title }}" class="w-100">
+                    </a>
+                    {% else %}
+                    <a href="{{ path('app_pins_show', {'id': pin.id}) }}">
+                        <img src="{{ vich_uploader_asset(pin) | imagine_filter('squared_thumbnail_medium') }}"  alt="{{ pin.title }}" class="w-100">
+                    </a>
+                {% endif %}
             </div>
             <div class="m-2">
                 <h2 class="h5 pl-3 pt-3" ><a class="text-secondary text-decoration-none" href="{{ path('app_pins_show', {'id': pin.id}) }}">{{ pin.title }}</a></h2>
