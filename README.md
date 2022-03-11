@@ -1,6 +1,6 @@
 # Pinterest---PHP-Symfony
 
-<img src="/public/images/pinterest.jpg" />
+<img src="./CLONE PINTEREST/pinterest-clone/public/images/pinterest.jpg" />
 
 <h1>Installation</h1>
 
