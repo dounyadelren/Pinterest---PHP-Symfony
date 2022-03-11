@@ -1,7 +1,6 @@
 # Pinterest---PHP-Symfony
-Recréer Pinterest avec le framework php Symfony et MYSQL
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Symfony2.svg/1280px-Symfony2.svg.png" />
+<img src="/public/images/pinterest.jpg" />
 
 <h1>Installation</h1>
 
